@@ -71,6 +71,21 @@
             <h1 class="display-4">
                 La perception du risque de l'énergie nucléaire civile
             </h1>
+            <div class="atom-container">
+                <div class="nucleus"></div>
+
+                <div class="orbit orbit1">
+                    <div class="electron"></div>
+                </div>
+
+                <div class="orbit orbit2">
+                    <div class="electron"></div>
+                </div>
+
+                <div class="orbit orbit3">
+                    <div class="electron"></div>
+                </div>
+            </div>
 
             <p class="lead">
                 Cette page web de vulgarisation scientifique a pour but d’informer sur principaux enjeux liés aux
@@ -93,8 +108,7 @@
     </section>
 
     <!-- Section de transition : Résultats de l'enquête -->
-    <section
-        style="max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333;">
+    <section style="max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333;">
         <p style="font-size: 1.1rem; text-align: justify; margin-bottom: 1.5rem;">
             Notre enquête s’est notamment intéressée à la perception du risque d’accident nucléaire par le public. En
             réponse à la question demandant d’estimer sur une échelle de 1 à 5 le risque qu’un accident se produise, les
@@ -654,7 +668,7 @@
 
                             <div class="col-md-4">
                                 <div class="border rounded p-4 h-100">
-                                    <h4>Disposition des déchets</h4>
+                                    <h4>Gestion des déchets</h4>
                                     <p>Des déchets radioactifs sont produits à toutes les étapes de l’exploitation du
                                         combustible nucléaire : une partie de ces déchets provient de l’extraction de
                                         l’uranium et la fabrication de combustible nucléaire, mais la majorité provient
@@ -677,6 +691,7 @@
                                         procédé est notamment adopté par la France et lui permet de conditionner les
                                         déchets qui représentent 99% de la radioactivité générée (Méplan et Nuttin,
                                         2006, p.12).
+
 
                                         Dans le contexte actuel, pour l’écrasante majorité du volume de déchets produits
                                         (de faible activité et de moyenne activité à courte durée), ceux-ci sont envoyés
@@ -701,6 +716,7 @@
                                         de refroidissement annexées aux centrales sont conçues pour entreposer tout le
                                         combustible utilisé dans sa durée de vie (World Nuclear Association, 2025,
                                         paragr.38-40).
+
 
                                         Stockage (géologique profond)
 
@@ -1157,6 +1173,22 @@
                 <!-- Bootstrap JS -->
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
+                <script>
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                            }
+                        });
+                    });
+
+                    document.querySelectorAll('.card, .entry, .border.rounded').forEach(el => {
+                        el.classList.add('fade-in');
+                        observer.observe(el);
+                    });
+                </script>
 </body>
 
 </html>
